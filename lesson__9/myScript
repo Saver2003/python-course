@@ -1,0 +1,16 @@
+#!/bin/bash
+# This is a comment
+mkdir Projects
+cd Projects
+mkdir Project_1
+cd Project_1
+mkdir directory_1
+cd directory_1
+mkdir sub_dir_1
+mkdir sub_dir_2
+cd ../
+mkdir directory_2
+mkdir directory_3
+cd directory_3
+mkdir sub_dir_3
+cd ../../../
