@@ -16,8 +16,15 @@ movies = [
 ]
 
 
+def show_movie(movie):
+    print('{:<35}{:<15}'.format(movie['name'], 'rating'))
+
+
 def command_add():
-    print('add')
+    movies.append({
+        'name': input("Введите название фильма > "),
+        'ratings': {}
+    })
 
 
 def command_delete():
@@ -25,7 +32,9 @@ def command_delete():
 
 
 def command_list():
-    print('list')
+    print('{:<35}{:<15}'.format('Movie', 'Rating'))
+    for i in movies:
+        show_movie(i)
 
 
 def command_rate():
