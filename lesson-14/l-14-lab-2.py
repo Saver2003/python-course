@@ -16,16 +16,36 @@ movies = [
 ]
 
 
+def command_add():
+    print('add')
+
+
+def command_delete():
+    print('delete')
+
+
+def command_list():
+    print('list')
+
+
+def command_rate():
+    print('rate')
+
+
+def command_find():
+    print('find')
+
+
 def command_exit():
     exit('До свидания!')
 
 
 commands = {
-    'add': None,
-    'delete': None,
-    'list': None,
-    'rate': None,
-    'find': None,
+    'add': command_add,
+    'delete': command_delete,
+    'list': command_list,
+    'rate': command_rate,
+    'find': command_find,
     'exit': command_exit,
 }
 
