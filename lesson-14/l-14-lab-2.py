@@ -29,7 +29,8 @@ def show_movie(movie):
     for i in ratings:
         rating_sum += i
     average_rating = rating_sum / len(ratings)
-    print('{:<35}{:<15}'.format(movie['name'], average_rating))
+    print('{:<35}{:<15}'.format(movie['name'], average_rating)) # приделать вывод если у фильма нет оценки
+
 
 
 def find_movie(search_value):
@@ -79,11 +80,6 @@ commands = {
     'find': command_find,
     'exit': command_exit,
 }
-
-
-def check_command(command):
-    if command in commands:
-        print("Нет такой команды")
 
 
 while True:
