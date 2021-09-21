@@ -28,9 +28,28 @@ def show_movie(movie):
     rating_sum = 0
     for i in ratings:
         rating_sum += i
-    average_rating = rating_sum / len(ratings)
-    print('{:<35}{:<15}'.format(movie['name'], average_rating)) # приделать вывод если у фильма нет оценки
 
+    if not len(ratings):
+        print('{:<35}{:<15}'.format(movie['name'], 'Фильм не оценивался'))
+    else:
+        average_rating = rating_sum / len(ratings)
+        print('{:<35}{:<15}'.format(
+            movie['name'], "{0:.2f}".format(average_rating)))
+
+
+def show_rating(rating):
+    rating_sum = 0
+
+    if len(rating) == 0:
+        print('Фильм не оценивался')
+    else:
+        for i in rating.values():
+            rating_sum += i
+        for i in rating.items():
+            print('{:<15}{:15}'.format(i[0], i[1]))
+        average_rating = rating_sum / len(rating)
+        print('{:<15}{:15}'.format('Средняя оценка',
+              "{0:.2f}".format(average_rating)))
 
 
 def find_movie(search_value):
@@ -54,18 +73,32 @@ def command_delete():
 
 
 def command_list():
-    print('{:<35}{:<15}'.format('Movie', 'Rating'))
+    print('{:<35}{:<15}'.format('Название фильма', 'Рейтинг'))
     for movie in movies:
         show_movie(movie)
 
 
 def command_rate():
-    print('rate')
+    movie_title = input("Введите название фильма > ")
+    name = input("Введите своё имя > ")
+    rating = int(input("Введите оценку от 1 до 10 > "))
+
+    movie = find_movie(movie_title)
+
+    if rating > 0 and rating <= 10:
+        movie['ratings'][name] = rating
+    if rating == 0:
+        movie['ratings'].pop(name)
+
+    show_movie(movie)
 
 
 def command_find():
     title = input("Введите название фильма > ")
     movie = find_movie(title)
+    # print(movie['ratings'])
+    print(movie['name'])
+    show_rating(movie['ratings'])
 
 
 def command_exit():
