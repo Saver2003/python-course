@@ -1,0 +1,4 @@
+Apples, 10
+Peaches, 5
+Cherries, 60
+Apricots, 25

@@ -1,0 +1,6 @@
+name:Alex=phone:+996550110095
+name:John=phone:+23423423422
+name:Nick=phone:+555899834
+name:Henry=phone:+34578999
+name:Liam=phone:+485009223453
+name:Fred=phone:+996700456732
