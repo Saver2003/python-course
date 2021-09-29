@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Interstellar",
+        "ratings": {
+            "John": 10,
+            "Jack": 3,
+            "Alex": 9,
+            "Mary": 4
+        }
+    },
+    {
+        "title": "Avengers: Infinity War",
+        "ratings": {
+            "Jack": 9,
+            "Jane": 10
+        }
+    },
+    {
+        "title": "Forrest Gump",
+        "ratings": {
+            "Nick": 10,
+            "Mary": 10
+        }
+    }
+]
